@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Require-Bundle: com.dynatrace.diagnostics.sdk
+Bundle-Vendor: AccessHQ
+Bundle-ClassPath: .,lib/commons-io-2.4.jar,lib/json-simple-1.1.1.jar
+Bundle-Version: 1.0.0
+Bundle-Name: weather monitor
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.accesshq.weather;singleton:=true
+

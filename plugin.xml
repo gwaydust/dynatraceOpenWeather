@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<!-- plugin.xml file written by dynaTrace Client 6.2.6 -->
+<plugin>
+  <extension point="com.dynatrace.diagnostics.pdk.pluginconfig" id="com.accesshq.weather" name="weather monitor">
+    <information>
+      <category value="" />
+      <displayname value="weather monitor" />
+      <description value="Get Weather Information" />
+      <supportlevel value="unsupported" />
+    </information>
+    <configuration>
+      <property key="CelFah" label="CelFah" type="string" description="Celcius or Fahrenheit" default="C" multiline="false" />
+      <property key="City" label="City" type="string" description="City name, no space" default="HongKong" multiline="false" />
+      <property key="OpenWeatherMapKey" label="apiKey" type="string" description="API key, obtained from http://openweathermap.org/appid" default="07774fef011a044c1e96bcbdcb00e2eb" multiline="false" />
+    </configuration>
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.monitor" id="com.accesshq.weather.monitor" name="weather monitor">
+    <plugin configid="com.accesshq.weather" class="com.accesshq.weather.monitor" />
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.monitormetricgroup" id="com.accesshq.weather.monitor.metricgroup1" name="group1">
+    <metricgroup monitorid="com.accesshq.weather.monitor">
+      <metric defaultrate="purepath" name="temperature" unit="number" description="degrees" />
+      <metric defaultrate="purepath" name="pressure" unit="number" description="My metric description ...">
+        <property key="mymetrickey1" value="mymetricvalue1" optional="false" />
+      </metric>
+      <metric defaultrate="purepath" name="humidity" unit="number" description="My metric description ..." />
+    </metricgroup>
+  </extension>
+</plugin>
